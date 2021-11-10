@@ -1,7 +1,7 @@
 # Gentlemans Gallery
 Changes from rezreal original:
 1. Cayote device linking made to match https://github.com/rezreal/coyote , which seems to have resolved connecting a device. (It was not working before)
-2. Images are no longer censored in the browser itself and no boxes are displayed. (This, personally, defeats the purpose of not looking if you can't look anyway)
+2. Images are no longer censored in the browser itself and no boxes are displayed. (Censoring, personally, defeats the purpose of not looking if you can't look anyway)
 3. Button to start gallery was not appearing for me--it now is always shown, but obviously only works when you load images first.
 
 to do:
