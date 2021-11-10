@@ -126,13 +126,19 @@ export async function pairDevice(batteryChangeCallback?: (batteryLevel: number) 
   }];
 
 
-  const previousDevices: BluetoothDevice[] | undefined = await (navigator as any).bluetooth?.getDevices();
-  const previousDevice:BluetoothDevice | undefined = previousDevices.find(d => d.id === previousDeviceId);
-  const device = previousDevice || await ((navigator as any).bluetooth as Bluetooth).requestDevice({
+            const device = await navigator.bluetooth.requestDevice({
+                filters: [{
+                    namePrefix: 'D-LAB',
+                }],
+                //acceptAllDevices: true,
+                optionalServices: [coyoteService, batteryService]
+            });
+/*   const previousDevice:BluetoothDevice | undefined = previousDevices.find(d => d.id === previousDeviceId); */
+/*   const device = previousDevice || await ((navigator as any).bluetooth as Bluetooth).requestDevice({
 
       filters: filters,
       optionalServices: [coyoteService, batteryService],
-    })
+    }) */
 
 
     console.log("Connecting to GATT Server...");

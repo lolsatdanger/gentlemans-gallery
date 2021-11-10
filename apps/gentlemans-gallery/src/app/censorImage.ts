@@ -21,11 +21,11 @@ function loadImage(dataUrl: string): Promise<HTMLImageElement> {
 
 function blurRectangle(ctx: CanvasRenderingContext2D, h: number, w: number, blur: number, color: string) {
   ctx.fillStyle = color;
-  ctx.shadowBlur = blur;
+  //ctx.shadowBlur = blur;
   ctx.shadowColor = color;
   ctx.shadowOffsetX = w;
   ctx.shadowOffsetY = h;
-  ctx.fillRect( -w + blur, -h + blur, w - blur * 2, h - blur * 2 );
+ // ctx.fillRect( -w + blur, -h + blur, w - blur * 2, h - blur * 2 );
 }
 
 export async function censorImage(file:File, metadata: PurifyMetadata, blurCondition: (DetectionType) => boolean): Promise<string> {
@@ -40,8 +40,8 @@ export async function censorImage(file:File, metadata: PurifyMetadata, blurCondi
 
   const censorTargets = metadata.output.detections.filter(d => blurCondition(d.name));
 
-  ctx.strokeStyle = "#fff";
-  ctx.fillStyle = "#fff";
+  ctx.strokeStyle = "rgba(255, 255, 255, .0)";
+  ctx.fillStyle = "rgba(255, 255, 255, 0)";
 
   const numberFormat =  new Intl.NumberFormat('en-GB', { maximumSignificantDigits: 2 });
   for (const ct of censorTargets) {
@@ -54,7 +54,7 @@ export async function censorImage(file:File, metadata: PurifyMetadata, blurCondi
 
     ctx.strokeRect(x, y, width, height);
 
-    ctx.filter = 'blur(20px)';
+   // ctx.filter = 'blur(20px)';
     ctx.drawImage(canvas,
       x, y, width, height,
       x, y, width, height);

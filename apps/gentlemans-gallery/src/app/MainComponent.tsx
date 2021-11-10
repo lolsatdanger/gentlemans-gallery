@@ -284,7 +284,7 @@ export class MainComponent extends Component<Props, State> {
         }),
         switchMap((zone) =>
           of(zone).pipe(
-            delay(zone === 'FOCUS' ? this.state.rules.focusDuration * 1000 : 200)
+            delay(zone === 'FOCUS' || zone === 'null' ? this.state.rules.focusDuration * 1000 : 200)
           )
         ),
         tap((regionType) => {
@@ -694,8 +694,7 @@ export class MainComponent extends Component<Props, State> {
           <header>
             <h5>
               Points: {this.state.stats.points}{' '}
-              {this.state.rules.allowSkipImage &&
-              this.state.slides.length > 0 ? (
+              {this.state.rules.allowSkipImage ? (
                 <button onClick={() => this.nextSlide(true)}>Skip Image</button>
               ) : (
                 ''
@@ -730,10 +729,7 @@ export class MainComponent extends Component<Props, State> {
             /></div>) : ('')}
 
 
-          {this.state.slides.length > 0 && this.state.phase === 'SETUP' ? (
             <button onClick={() => this.startGame()}>Start here ({this.state.slides.length} slides)!</button>
-          ) : (
-            ''
           )}
 
 

@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
-    "start": "nx serve --host 0.0.0.0 --ssl true",
+    "start": "nx serve --host 10.0.0.189 --ssl true",
     "build": "nx build",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
@@ -26,14 +26,15 @@
   },
   "private": true,
   "dependencies": {
-    "buffer": "3.6.2",
-    "buttplug": "^0.13.1",
-    "core-js": "^3.6.5",
-    "document-register-element": "1.13.1",
+    "buffer": "^3.6.2",
+    "buttplug": "^0.13.2",
+    "core-js": "^3.19.1",
+    "document-register-element": "^1.14.10",
+    "git": "^0.1.5",
     "process": "^0.11.10",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "rxjs": "^6.5.5"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rxjs": "^6.6.7"
   },
   "devDependencies": {
     "@nrwl/eslint-plugin-nx": "9.3.0",
@@ -43,7 +44,7 @@
     "@nrwl/workspace": "9.3.0",
     "@testing-library/react": "9.4.0",
     "@types/jest": "25.1.4",
-    "@types/node": "^12.0.2",
+    "@types/node": "^12.20.37",
     "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
     "@types/web-bluetooth": "0.0.9",
@@ -61,6 +62,6 @@
     "ts-jest": "25.2.1",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
-    "typescript": "~3.9.7"
+    "typescript": "^3.9.10"
   }
 }

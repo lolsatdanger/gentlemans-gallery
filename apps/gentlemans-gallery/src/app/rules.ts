@@ -19,15 +19,13 @@ export type RegionType = 'FOCUS' | 'SOFT_PUNISH' | 'HARD_PUNISH'
 export const defaultRules: Rules = {
   focusDuration: 2,
   regionMapping: {
-    FOCUS : ['FACE_FEMALE', 'FACE_MALE'],
+    FOCUS : ['FACE_FEMALE','FACE_MALE','MALE_GENITALIA_EXPOSED','MALE_GENITALIA_COVERED','ARMPITS_EXPOSED', 'FEET_COVERED', 'FEET_EXPOSED', 'BELLY_EXPOSED', 'BELLY_COVERED'],
     SOFT_PUNISH: [
       'FEMALE_BREAST_COVERED',
       'FEMALE_GENITALIA_COVERED',
-      'MALE_BREAST_EXPOSED',
       'BUTTOCKS_EXPOSED',
     ],
     HARD_PUNISH: [
-      'MALE_GENITALIA_EXPOSED',
       'FEMALE_BREAST_EXPOSED',
       'FEMALE_GENITALIA_EXPOSED',
       'ANUS_EXPOSED',
@@ -38,5 +36,5 @@ export const defaultRules: Rules = {
   softFilter: 'saturate',
   playSounds: true,
   fullscreen: false,
-  shuffleGallery: false,
+  shuffleGallery: true,
 };
