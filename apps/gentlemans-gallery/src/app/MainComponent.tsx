@@ -284,7 +284,7 @@ export class MainComponent extends Component<Props, State> {
         }),
         switchMap((zone) =>
           of(zone).pipe(
-            delay(zone === 'FOCUS' || zone === 'null' ? this.state.rules.focusDuration * 1000 : 200)
+            delay(zone === 'FOCUS' ? this.state.rules.focusDuration * 1000 : 200)
           )
         ),
         tap((regionType) => {
